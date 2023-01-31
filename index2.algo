@@ -1,0 +1,20 @@
+FUNCTION dot_product(v1: ARRAY[1..n] of REAL, v2: ARRAY[1..n] of REAL): REAL
+BEGIN
+  ps := 0;
+  FOR i := 1 TO n DO
+    ps := ps + v1[i] * v2[i];
+  END FOR;
+  RETURN ps;
+END dot_product;
+
+PROCEDURE orthogonality(v1: ARRAY[1..n] of ARRAY[1..n] of REAL, v2: ARRAY[1..n] of ARRAY[1..n] of REAL)
+BEGIN
+  FOR i := 1 TO n DO
+    ps := dot_product(v1[i], v2[i]);
+    IF ps = 0 THEN
+      write ("The vectors are orthogonal");
+    ELSE
+      write ("The vectors are not orthogonal");
+    END IF;
+  END FOR;
+END orthogonality;

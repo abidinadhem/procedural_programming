@@ -1,0 +1,7 @@
+PROCEDURE dot_product(v1: ARRAY[1..n] of REAL, v2: ARRAY[1..n] of REAL, VAR ps: REAL)
+BEGIN
+  ps := 0;
+  FOR i := 1 TO n DO
+    ps := ps + v1[i] * v2[i];
+  END FOR;
+END dot_product;
